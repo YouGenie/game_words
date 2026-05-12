@@ -117,6 +117,6 @@ def clear_words():
     return {"status": "success", "message": "История слов очищена"}
 
 
-#  команда для запуска сервера
+#  команда для запуска сервера:
 #  uvicorn main:app --reload
 
