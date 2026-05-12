@@ -1,0 +1,7 @@
+__pycache__/
+.vscode
+models/*
+!models/.gitkeep
+venv/
+.venv/
+database.db
