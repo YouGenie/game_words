@@ -39,5 +39,8 @@ pip install -r requirements.txt
 python app.py
 ```
 
-## 🐳 Docker (в разработке)
-Скоро будет добавлена поддержка запуска через `docker-compose` для быстрой развертки в изолированном контейнере.
+## Docker:
+Чтобы запустить приложение через docker-compose, выполните пункты ниже:
+- установить Docker
+- выполнить docker-compose up --build
+- открыть http://localhost:8501

@@ -4,4 +4,5 @@ models/*
 !models/.gitkeep
 venv/
 .venv/
+.git/
 words.db

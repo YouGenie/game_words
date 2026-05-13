@@ -38,7 +38,7 @@ else:
 llm = Llama(
     model_path=MODEL_PATH, 
     n_ctx=1024,
-    #n_gpu_layers=-1,     # все слои на GPU 
+    # n_gpu_layers=-1,     # все слои на GPU 
     n_threads=8, 
     verbose=False,
     stream=False

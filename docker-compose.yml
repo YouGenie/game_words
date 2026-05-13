@@ -1,21 +1,32 @@
 version: '3.8'
 
 services:
-  web-assistant:
+  backend:
     build: .
-    container_name: game_words
+    container_name: game_words_backend
     ports:
       - "8000:8000"
     volumes:
       - .:/app
       - ./models:/app/models
-    # Если у тебя NVIDIA и ты хочешь GPU в докере, добавь эти строки:
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: "nvidia"
-              count: all
-              capabilities: [gpu]
     environment:
       - PYTHONUNBUFFERED=1
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build: .
+    container_name: game_words_frontend
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+      - ./models:/app/models
+    environment:
+      - PYTHONUNBUFFERED=1
+      - API_URL=http://backend:8000
+    command: streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+    depends_on:
+      - backend
+
+
+
