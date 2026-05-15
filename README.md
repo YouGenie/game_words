@@ -35,9 +35,8 @@ pip install -r requirements.txt
 *Примечание: Для ускорения на GPU (NVIDIA) необходимо заранее установить CUDA Toolkit и убедиться, что ваша видеокарта его поддерживает.*  
 
 ### 3. Запуск
-```bash
-python app.py
-```
+- запустить сервер: uvicorn main:app --reload
+- запустить приложение app.py
 
 ## Docker:
 Чтобы запустить приложение через docker-compose, выполните пункты ниже:
